@@ -10,9 +10,26 @@
 
 using namespace std;
 
-fstream fin; //file pointer, to read in a file?
+//file pointer, to read in a file?
+fstream fin; 
+//create empty map container
+map<string, string> ticker_and_company;
+//create vector to hold the 2 strings before inserting into map
+vector<string> row;
 
 
+//user input
+void userInput() {
+    while (true) {
+        //ask user for the ticker symbol, give back the company name
+        string inpt;
+        string tickerToCheck;
+        std::cout << "Enter a ticker symbol (all caps please), and get the corresponding company." << endl;
+        std::cout << "Or enter 'exit' to end the program." << endl;
+        std::cout << "Ticker symol: ";
+        cin >> inpt;
+        std::cout << endl;
+        transform(inpt.begin(), inpt.end(), inpt.begin(), toupper);
 
 int main()
 {
